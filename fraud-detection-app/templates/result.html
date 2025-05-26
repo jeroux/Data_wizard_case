@@ -1,0 +1,22 @@
+<!-- templates/result.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Analysis Results</h2>
+    <div class="result {% if prediction == 'NON_FRAUDULENT' %}non-fraudulent{% else %}fraudulent{% endif %}">
+        <h3>Prediction: {{ prediction|replace('_', ' ') }}</h3>
+        <p>Confidence: {{ "%.2f"|format(confidence * 100) }}%</p>
+        
+        <div class="confidence-bar">
+            <div class="confidence-fill" style="width: {{ confidence * 100 }}%"></div>
+        </div>
+        
+        <h4>Original Text:</h4>
+        <div style="background: white; padding: 10px; border-radius: 5px;">
+            {{ original_text }}
+        </div>
+        
+        <br>
+        <a href="{{ url_for('home') }}">Analyze another text</a>
+    </div>
+{% endblock %}

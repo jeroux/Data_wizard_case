@@ -1,0 +1,14 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Fraudulent Text Detection</h1>
+    {% if error %}
+        <div style="color: red">{{ error }}</div>
+    {% endif %}
+    <form method="POST">
+        <textarea name="text" placeholder="Enter text to analyze..."></textarea>
+        <br>
+        <button type="submit">Analyze Text</button>
+    </form>
+{% endblock %}

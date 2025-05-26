@@ -172,3 +172,15 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Remove docker image files
+fraud-detector.tar
+
+# Rmove the model files
+fraud-detection-app/fraud_detection_model/*
+
+# Remove data files
+dataset.csv
+cleaned_dataset.csv
+
+
